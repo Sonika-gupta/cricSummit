@@ -1,0 +1,42 @@
+[
+    {
+        "name": "Bouncer",
+        "value": "bouncer"
+    },
+    {
+        "name": "Out Swinger",
+        "value": "outswinger"
+    },
+    {
+        "name": "Yorker",
+        "value": "yorker"
+    },
+    {
+        "name": "Off Break",
+        "value": "offbreak"
+    },
+    {
+        "name": "Inswinger",
+        "value": "inswinger"
+    },
+    {
+        "name": "Leg Cutter",
+        "value": "legcutter"
+    },
+    {
+        "name": "Slower",
+        "value": "slowerball"
+    },
+    {
+        "name": "Pace",
+        "value": "pace"
+    },
+    {
+        "name": "Off Cutter",
+        "value": "offcutter"
+    },
+    {
+        "name": "Doosra",
+        "value": "doosra"
+    }
+]
