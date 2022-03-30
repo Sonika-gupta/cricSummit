@@ -1,25 +1,22 @@
+const FirstInnings = require('./FirstInnings')
+const SecondInnings = require('./SecondInnings')
+
 class Game {
-  constructor ({ overs = 20, bowlCards, teamA, teamB, scoreboard }) {
+  constructor ({ overs = 20, bowlCards, teamA, teamB }) {
     this.overs = overs
     this.bowlCards = bowlCards
     this.teamA = teamA
     this.teamB = teamB
-    this.target = 0
-    this.scoreboard = scoreboard
+    this.firstInnings = new FirstInnings()
+    this.secondInnings = new SecondInnings()
   }
 
-  startGame () {
-    this.toss()
-    this.scoreboard.assignBowler()
-    this.scoreboard.assignFirstBatsman()
-    this.scoreboard.assignSecondBatsman()
-  }
-
-  toss () {
-    const heads = Math.floor(Math.random() * 2)
-    // ASSUMING TEAM A CALLS HEAD AND WHICHEVER TEAM WINS ASKS TO BAT FIRST
-    this.scoreboard.battingTeam = heads ? this.teamA : this.teamB
-    this.scoreboard.bowlingTeam = heads ? this.teamB : this.teamA
+  setupSecondInnings () {
+    this.secondInnings.start({
+      target: this.firstInnings.scoreboard.score + 1,
+      battingTeam: this.firstInnings.bowlingTeam,
+      bowlingTeam: this.firstInnings.battingTeam
+    })
   }
 }
 
