@@ -4,7 +4,6 @@ const Player = require('./Player')
 const BowlCard = require('./BowlCard')
 const Scoreboard = require('./Scoreboard')
 const Delivery = require('./Delivery')
-const Inquirer = require('./Inquirer')
 
 module.exports = {
   Game,
@@ -12,6 +11,5 @@ module.exports = {
   Player,
   BowlCard,
   Scoreboard,
-  Delivery,
-  Inquirer
+  Delivery
 }

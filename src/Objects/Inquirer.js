@@ -1,19 +1,18 @@
 const inquirer = require('inquirer')
+const { bowlTypes, shotTypes, shotTimings, teams } = require('../data')
 
-class Inquirer {
-  constructor ({ bowlTypes, shotTypes, shotTimings, teams }) {
-    this.bowlTypes = bowlTypes
-    this.shotTypes = shotTypes
-    this.shotTimings = shotTimings
-    this.teams = teams
-    this.input = {}
-    this.choices = [
-      'Predict Outcome',
-      'Get Commentary With Outcome',
-      'Play Super Over',
-      'Exit'
-    ]
-  }
+module.exports = {
+  bowlTypes: bowlTypes,
+  shotTypes: shotTypes,
+  shotTimings: shotTimings,
+  teams: teams,
+  input: {},
+  choices: [
+    'Predict Outcome',
+    'Get Commentary With Outcome',
+    'Play Super Over',
+    'Exit'
+  ],
 
   getFunctionChoice () {
     const questions = [
@@ -26,7 +25,7 @@ class Inquirer {
       }
     ]
     return inquirer.prompt(questions)
-  }
+  },
 
   getPredictionInput () {
     const questions = [
@@ -53,7 +52,7 @@ class Inquirer {
       }
     ]
     return inquirer.prompt(questions)
-  }
+  },
 
   getSuperOverInput () {
     const questions = [
@@ -79,7 +78,7 @@ class Inquirer {
       }
     ]
     return inquirer.prompt(questions)
-  }
+  },
 
   getShotPlayedInput (ballNumber) {
     const questions = [
@@ -101,5 +100,3 @@ class Inquirer {
     return inquirer.prompt(questions)
   }
 }
-
-module.exports = Inquirer
